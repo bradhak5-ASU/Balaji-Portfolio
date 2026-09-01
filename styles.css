@@ -539,7 +539,7 @@ textarea {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--spacing-xl);
 }
 
@@ -617,6 +617,11 @@ textarea {
     aspect-ratio: 16/10;
     object-fit: cover;
     object-position: left top;
+}
+
+.project-image-tradewell img {
+    transform: scale(1.35);
+    transform-origin: center top;
 }
 
 .project-placeholder {
@@ -865,6 +870,10 @@ textarea {
    Responsive Design
    ======================================== */
 @media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .hero-visual {
         display: none;
     }
@@ -890,6 +899,10 @@ textarea {
 }
 
 @media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
     .nav-menu {
         position: fixed;
         top: var(--nav-height);
