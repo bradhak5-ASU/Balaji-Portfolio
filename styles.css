@@ -612,6 +612,13 @@ textarea {
     overflow: hidden;
 }
 
+.project-image img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    object-position: left top;
+}
+
 .project-placeholder {
     aspect-ratio: 16/10;
     background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
