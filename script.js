@@ -25,17 +25,8 @@ const ThemeManager = {
 
     init() {
         const savedTheme = localStorage.getItem(this.STORAGE_KEY);
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = savedTheme || (prefersDark ? this.DARK : this.LIGHT);
-        
+        const theme = savedTheme === this.DARK ? this.DARK : this.LIGHT;
         this.setTheme(theme);
-        
-        // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem(this.STORAGE_KEY)) {
-                this.setTheme(e.matches ? this.DARK : this.LIGHT);
-            }
-        });
     },
 
     setTheme(theme) {
